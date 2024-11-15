@@ -1,15 +1,15 @@
 import React from 'react';
-import {FlatList} from "react-native";
+import { FlatList } from 'react-native';
+import ListingItem from './ListingItem';
 
-export const Listings = ({restaurants}) => {
-
-
+const Listing = ({ restaurants }) => {
     return (
         <FlatList
+            data={restaurants}
             keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <ListingItem restaurant={item} />}
         />
-    )
-}
+    );
+};
 
-export default Listings;
-
+export default Listing;

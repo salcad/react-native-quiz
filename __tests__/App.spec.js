@@ -87,13 +87,13 @@ describe('Restaurant Listing', () => {
 
     it('should render the Restaurant List Item correctly', () => {
         restaurantsResponse.data.map(restaurant => {
-            const tree = render(<ListingItem item={restaurant}/>)
-            expect(tree.getByTestId(TEST_IDS.NAME)).toHaveTextContent(restaurant.name)
-            expect(tree.getByTestId(TEST_IDS.CITY)).toHaveTextContent(restaurant.city)
-            expect(tree.getByTestId(TEST_IDS.AVERAGE_RATING)).toHaveTextContent(restaurant.user_rating.average_rating)
-            expect(tree.getByTestId(TEST_IDS.VOTES_COUNT)).toHaveTextContent(restaurant.user_rating.votes)
-        })
-    })
+            const tree = render(<ListingItem restaurant={restaurant} />); // Updated here
+            expect(tree.getByTestId(TEST_IDS.NAME)).toHaveTextContent(restaurant.name);
+            expect(tree.getByTestId(TEST_IDS.CITY)).toHaveTextContent(restaurant.city);
+            expect(tree.getByTestId(TEST_IDS.AVERAGE_RATING)).toHaveTextContent(restaurant.user_rating.average_rating);
+            expect(tree.getByTestId(TEST_IDS.VOTES_COUNT)).toHaveTextContent(restaurant.user_rating.votes);
+        });
+    });    
 
     it('should render the progress bar while the data is loading and hide after its loaded', async () => {
         let wrapper = render(<App/>);

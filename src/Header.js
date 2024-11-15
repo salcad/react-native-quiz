@@ -1,12 +1,14 @@
 import React from 'react';
-import {Text, View, StyleSheet} from "react-native";
+import { Text, View, StyleSheet } from 'react-native';
 
-export const Header = () => {
+const Header = ({ total }) => {
     return (
-        <View style={[styles.header]}>
-            <Text testID="total-restaurants" style={[styles.headerText]}>Count Restaurants Near You</Text>
+        <View style={styles.header}>
+            <Text testID="total-restaurants" style={styles.headerText}>
+                {total} Restaurants Near You
+            </Text>
         </View>
-    )
+    );
 };
 
 export default Header;
@@ -21,5 +23,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center'
     }
-
-})
+});
