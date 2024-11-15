@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "restaurant-listing-from-api",
+    "slug": "restaurant-listing-from-api",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "restaurant-listing-from-api"
+}
